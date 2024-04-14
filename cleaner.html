@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaners Page - CleanMatch</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+        /* Header styles */
+        header {
+            background-color: #004080; /* Darker blue */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 4px solid #00264d; /* Darker border */
+        }
+        /* Button styles */
+        .btn-container {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .btn-container button {
+            background-color: #004080; /* Darker blue */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn-container button:hover {
+            background-color: #00264d; /* Darker background */
+        }
+        /* Jobs container */
+        .jobs-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+            margin-bottom: 20px; /* Added margin for separation */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CleanMatch - Cleaners Page</h1>
+</header>
+
+<div class="container">
+    <div class="btn-container">
+        <button onclick="showCurrentJobs()">View Current Jobs</button>
+        <button onclick="showAcceptedJobs()">Accepted Jobs</button>
+    </div>
+
+    <!-- Current Jobs Section -->
+    <div id="currentJobs" class="jobs-container" style="display: none;">
+        <h2>Current Jobs</h2>
+        <!-- Display current jobs here -->
+        <p>No current jobs.</p>
+    </div>
+
+    <!-- Accepted Jobs Section -->
+    <div id="acceptedJobs" class="jobs-container" style="display: none;">
+        <h2>Accepted Jobs</h2>
+        <!-- Display accepted jobs here -->
+        <p>No accepted jobs.</p>
+    </div>
+</div>
+
+<script>
+    function showCurrentJobs() {
+        var currentJobs = document.getElementById("currentJobs");
+        var acceptedJobs = document.getElementById("acceptedJobs");
+        if (currentJobs.style.display === "none") {
+            currentJobs.style.display = "block";
+            acceptedJobs.style.display = "none";
+        } else {
+            currentJobs.style.display = "none";
+        }
+    }
+
+    function showAcceptedJobs() {
+        var acceptedJobs = document.getElementById("acceptedJobs");
+        var currentJobs = document.getElementById("currentJobs");
+        if (acceptedJobs.style.display === "none") {
+            acceptedJobs.style.display = "block";
+            currentJobs.style.display = "none";
+        } else {
+            acceptedJobs.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

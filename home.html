@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - CleanMatch</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+        /* Header styles */
+        header {
+            background-color: #004080; /* Darker blue */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 4px solid #00264d; /* Darker border */
+            position: relative; /* Relative positioning for containing the absolute positioned widget */
+        }
+        /* Widget styles */
+        .widget {
+            position: absolute;
+            top: 50%; /* Vertically centering */
+            transform: translateY(-50%); /* Translate to center */
+            left: 20px;
+            text-align: left;
+        }
+        .widget button {
+            background-color: transparent; /* Transparent background */
+            color: #fff;
+            padding: 10px 20px;
+            border: 1px solid #fff; /* White outline */
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .widget button:hover {
+            background-color: #00264d; /* Darker background */
+        }
+        /* Button styles */
+        .btn-container {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .btn-container button {
+            background-color: #004080; /* Darker blue */
+            color: #fff;
+            padding: 10px 20px;
+            border: 1px solid #fff; /* White outline */
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .btn-container button:hover {
+            background-color: #00264d; /* Darker background */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CleanMatch</h1>
+    <div class="widget">
+        <button onclick="location.href='home.html'">Home</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="btn-container">
+        <button onclick="location.href='login.html'">Login</button>
+        <button onclick="location.href='register.html'">Register</button>
+    </div>
+</div>
+
+</body>
+</html>

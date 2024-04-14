@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landlords Page - CleanMatch</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+        /* Header styles */
+        header {
+            background-color: #004080; /* Darker blue */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 4px solid #00264d; /* Darker border */
+        }
+        /* Button styles */
+        .btn-container {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .btn-container button {
+            background-color: #004080; /* Darker blue */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn-container button:hover {
+            background-color: #00264d; /* Darker background */
+        }
+        /* Form styles */
+        .form-container, .jobs-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+            margin-bottom: 20px; /* Added margin for separation */
+        }
+        .form-container input[type="text"],
+        .form-container input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            height: 100px;
+        }
+        .form-container input[type="checkbox"] {
+            margin-top: 10px;
+        }
+        .form-container input[type="submit"] {
+            background-color: #004080; /* Darker blue */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px; /* Adjusted margin */
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #00264d; /* Darker background */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CleanMatch - Landlords Page</h1>
+</header>
+
+<div class="container">
+    <div class="btn-container">
+        <button onclick="showCurrentJobs()">View Current Jobs</button>
+        <button onclick="showAcceptedJobs()">Accepted Jobs</button>
+        <button onclick="showNewJobForm()">List New Job</button>
+    </div>
+
+    <!-- Current Jobs Section -->
+    <div id="currentJobs" class="jobs-container" style="display: none;">
+        <h2>Current Jobs</h2>
+        <!-- Display current jobs here -->
+        <p>No current jobs.</p>
+    </div>
+
+    <!-- Accepted Jobs Section -->
+    <div id="acceptedJobs" class="jobs-container" style="display: none;">
+        <h2>Accepted Jobs</h2>
+        <!-- Display accepted jobs here -->
+        <p>No accepted jobs.</p>
+    </div>
+
+    <!-- New Job Form Section -->
+    <div id="newJobForm" class="form-container" style="display: none;">
+        <h2>List New Job</h2>
+        <form action="#" method="post">
+            <input type="text" name="postcode" placeholder="Post Code" required>
+            <input type="text" name="address" placeholder="Full Address" required>
+            <input type="number" name="price" placeholder="Price (£)" required>
+            <textarea name="description" placeholder="Job Description" required></textarea>
+            <input type="text" name="landlordName" placeholder="Landlord Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number (+44 as an example)" pattern="[0-9]{1,}" title="Please enter only digits." required>
+            <label><input type="checkbox" name="cleaningTools"> Cleaning tools provided</label>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+<script>
+    function showCurrentJobs() {
+        var currentJobs = document.getElementById("currentJobs");
+        var newJobForm = document.getElementById("newJobForm");
+        var acceptedJobs = document.getElementById("acceptedJobs");
+        if (currentJobs.style.display === "none") {
+            currentJobs.style.display = "block";
+            newJobForm.style.display = "none";
+            acceptedJobs.style.display = "none";
+        } else {
+            currentJobs.style.display = "none";
+        }
+    }
+
+    function showAcceptedJobs() {
+        var acceptedJobs = document.getElementById("acceptedJobs");
+        var newJobForm = document.getElementById("newJobForm");
+        var currentJobs = document.getElementById("currentJobs");
+        if (acceptedJobs.style.display === "none") {
+            acceptedJobs.style.display = "block";
+            newJobForm.style.display = "none";
+            currentJobs.style.display = "none";
+        } else {
+            acceptedJobs.style.display = "none";
+        }
+    }
+
+    function showNewJobForm() {
+        var newJobForm = document.getElementById("newJobForm");
+        var currentJobs = document.getElementById("currentJobs");
+        var acceptedJobs = document.getElementById("acceptedJobs");
+        if (newJobForm.style.display === "none") {
+            newJobForm.style.display = "block";
+            currentJobs.style.display = "none";
+            acceptedJobs.style.display = "none";
+        } else {
+            newJobForm.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
